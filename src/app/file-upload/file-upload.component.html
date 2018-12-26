@@ -1,0 +1,45 @@
+<div>
+<mat-nav-list>
+    <mat-card> 
+
+      <h3>Import Skill/Job Title File</h3>
+      <mat-divider></mat-divider>
+      <mat-list>
+          <small>
+        <ol> 
+         
+     <li>   Enter the customer ID</li>
+     <li>     Enter the exact file name with its path</li>
+     <li>    Click on the Upload File button</li>
+        </ol>     
+        </small>
+         </mat-list>
+    </mat-card>
+	
+
+  <mat-card> 
+    <div>
+          <input type="file" name="photo" ng2FileSelect [uploader]="uploader" multiple />
+    
+
+    
+    <button type="button" mat-raised-button color="primary"
+      (click)="uploader.uploadAll()" 
+      [disabled]="!uploader.getNotUploadedItems().length" >
+          Upload File
+    </button>
+  
+    </div>
+    </mat-card>
+  <br/>
+  <mat-card>
+      <h3>Upload Files History</h3>
+      <table mat-table [dataSource]="fileStatusHistory">
+        </table>
+        
+  </mat-card>
+
+</mat-nav-list>
+
+
+</div>
